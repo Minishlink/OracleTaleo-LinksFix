@@ -7,13 +7,16 @@
 // @homepageURL https://github.com/Minishlink/OracleTaleo-LinksFix
 // @include     http://*.taleo.net/*
 // @include     https://*.taleo.net/*
-// @version     1.0
+// @version     1.1
 // @grant       none
 // ==/UserScript==
 MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
 if (MutationObserver) {
   var observer = new MutationObserver(function (mutations) {
     replace();
+  }).observe(document.body, {
+    childList: true,
+    subtree: true
   });
 }
 
